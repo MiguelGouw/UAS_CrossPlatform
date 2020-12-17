@@ -1,0 +1,42 @@
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet"/>
+
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <div class="back-circle"></div>
+    <ion-title class="ion-text-center custom-font">Sign In</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <div class="ion-padding" style="display: flex; justify-content: center; align-items: center; height: 100%;">
+    <ion-card style="height: 500px; width: 400px;">
+      <h1 class="ion-text-center">Welcome</h1>
+    <form class="form ion-padding" [formGroup]="validations_form"(ngSubmit)="loginUser()">
+      <h2 class="ion-text-start">Login</h2>
+      <div class="wrap-input">
+        <input class="input" type="text" name="email" placeholder="Email" formControlName="email"/>
+      </div>
+      <div class="wrap-input">
+        <input class="input" type="password" name="password" placeholder="Password" formControlName="password"/>
+      </div>
+      <div class="container-form-btn" style="margin-top: 26px">
+        <button class="form-btn custom-font" type="submit" [disabled]="!validations_form.valid">
+          Log In
+        </button>
+      </div>
+      <label class="error-message">{{errorMessage}}</label>
+    </form>
+    </ion-card>
+  </div>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <p class="ion-text-center custom-font">
+      No account yet? <a href="register">Create an account.</a>
+    </p>
+  </ion-toolbar>
+</ion-footer>
+
+
+
