@@ -10,7 +10,7 @@
   <ion-grid class="ion-margin-horizontal" *ngIf="Datauser"> 
       <ion-row class="ion-justify-content-center">    
           <ion-col size="7" size-sm="2">      
-            <input type="file" *ngIf="isDesktop" #filePicker (change)="onFileChoose($event)"/>
+            <!-- <input type="file" *ngIf="isDesktop" #filePicker (change)="onFileChoose($event)"/> -->
             <ion-img src="assets/icon/personicon.png" style="object-fit: contain; width: 100%;" *ngIf="!photo"></ion-img>
             <img id="profilePicture" src="{{photo}}" class="circle-image" *ngIf="photo" (load)="imageLoaded()"> 
             <ion-icon (click)="presentFotoActionSheet()" name="image-outline" size="large" style="float: right; color: black;"></ion-icon>      
@@ -33,7 +33,7 @@
                 <div class="text-gray" *ngIf="!Datauser.locations">History lokasi tidak ada</div>      
                 <div *ngIf="Datauser.locations"> 
                   <ion-card>
-                    <ion-item  *ngFor="let location of Datauser.locations; let i = index" (press)="onPress(i)">             
+                    <ion-item  *ngFor="let location of Datauser.locations; let i = index">             
                       <ion-label>
                         <span class="text-gray" >{{ location.tanggal }}</span>
                         <div style="padding-top: 4px; ">{{ location.nama }}</div>              

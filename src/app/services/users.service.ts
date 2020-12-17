@@ -20,7 +20,7 @@ export class UsersService {
 
   create(key: string, value: any): any {
     return this.db.object("/user/"+key).set({
-      name:value.firstName+value.lastName,
+      name:value.firstName+" "+value.lastName,
       email:value.email,
     });
   }

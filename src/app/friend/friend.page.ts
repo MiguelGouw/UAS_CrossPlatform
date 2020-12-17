@@ -128,9 +128,6 @@ export class FriendPage implements OnInit {
     }
   }
 
-  onPress(idxItem, userFullname){
-    this.presentAlert(idxItem, userFullname);
-  }
 
   imageLoaded(event){
     var target = event.target || event.srcElement || event.currentTarget;
